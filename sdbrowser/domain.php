@@ -143,7 +143,6 @@
 				$header .= "<a href='" . $base . "domain.php?action=view&domain=$domainName'>First $maxItems</a>";
 			}
 			if ( $newToken != null ) {
-				if ( $nextToken != null ) $header .= " / ";
 				$header .= "<a href='" . $base . "domain.php?action=view&domain=$domainName&next=$newToken'>Next $maxItems</a>";
 			}
 
