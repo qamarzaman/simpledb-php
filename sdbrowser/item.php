@@ -47,9 +47,7 @@
 		exit;
 	}
 
-	if ( isset( $_REQUEST['dcurr'] ) ) {
-		$domainToken = $_REQUEST['dcurr'];
-	}
+	$domainToken = @$_REQUEST['dcurr'];
 	
 	if ( isset( $_REQUEST['item'] ) ) {
 		$itemName = $_REQUEST['item'];
