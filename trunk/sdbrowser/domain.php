@@ -25,7 +25,7 @@
 	include_once "simpledb.php";
 	include_once "sdbrowser/awsconst.php";
 
-	$kPageSize = 3;
+	$kPageSize = 10;
 	$base = "http://" . $_SERVER['SERVER_NAME'] . "/sdbrowser/";
 
 	$sdb = new simpledb(awsconst::$kAccessKeyID, awsconst::$kSecretAccessKey);
@@ -143,7 +143,7 @@
 				$header .= "<a href='" . $base . "domain.php?action=view&domain=$domainName'>First $maxItems</a>";
 			}
 			if ( $newToken != null ) {
-				if ( $nextToken != null ) echo " / ";
+				if ( $nextToken != null ) $header .= " / ";
 				$header .= "<a href='" . $base . "domain.php?action=view&domain=$domainName&next=$newToken'>Next $maxItems</a>";
 			}
 
