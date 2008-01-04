@@ -414,7 +414,7 @@ class simpledb {
 	 */
 	function expressionBetween($attribute, $low, $high, $inclusive = true, $not = false, $pad = -1) {
 		$out = "[";
-		if ( $out == true ) $out .= "NOT ";
+		if ( $not == true ) $out .= "NOT ";
 		
 		$low = $this->pad($low, $pad);
 		$high = $this->pad($high, $pad);
@@ -425,7 +425,7 @@ class simpledb {
 		
 		$out .= " AND ";
 
-		$out = "'$attribute' ";
+		$out .= "'$attribute' ";
 		$out .= ($inclusive == true ) ? self::$kQueryLessThanOrEquals : self::$kQueryLessThan;
 		$out .= " '$high'";
 		
